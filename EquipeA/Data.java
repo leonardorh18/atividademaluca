@@ -11,15 +11,15 @@ public class Data{
         System.out.println(this.dia +"/"+ this.mes + "/" + this.ano + " Hora " + this.hora + ":"+ this.minutos + ":"+ this.segundos);
     }
     public int getMinutos() {
-        return this.minuto;
+        return this.minutos;
     }
 
     public void setMinutos(int minuto) {
         if (minuto < 60){
 
-            this.minuto = minuto;
+            this.minutos = minuto;
         } else {
-            this.minuto = 0;
+            this.minutos = 0;
         }
         
     }
@@ -29,7 +29,7 @@ public class Data{
     }
 
     public void setSegundos(int segundos) {
-        if (minuto < 60){
+        if (segundos < 60){
 
             this.segundos = segundos;
         } else {

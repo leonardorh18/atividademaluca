@@ -1,6 +1,6 @@
 public class Main{
 
-    public void main (String[] args){
+    public static void main (String[] args){
 
        Data data = new Data();
 
@@ -9,7 +9,7 @@ public class Main{
        data.setHora(10);
        data.setDia(12);
        data.setMes(10);
-       data.setAno(2010)
+       data.setAno(2010);
 
        data.showData();
     }
