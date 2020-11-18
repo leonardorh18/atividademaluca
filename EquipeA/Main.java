@@ -4,14 +4,23 @@ public class Main{
 
        Data data = new Data();
 
-       //data.setSegundos(30);
-       //data.setMinutos(30);
-       data.setHora(14);
+       Data data2 = new Data();
+
+       data.setSegundos(30);
+       data.setMinutos(30);
+       data.setHora(13);
        data.setDia(12);
-       data.setMes(10);
-       data.setAno(2010);
+
+       data2.setSegundos(30);
+       data2.setMinutos(30);
+       data2.setHora(14);
+       data2.setDia(13);
+
+
 
        data.showData();
+       //data.checarEvento(15, 11, 10, 2010);
+       System.out.println(data.difSegundos(data2));
     }
 
 }

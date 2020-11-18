@@ -1,26 +1,58 @@
 public class Data{
 
-    //private int minutos;
-    //private int segundos;
-    private int dia;
+    private int segundos;
+    private int minutos;
     private int hora;
-    private int mes;
-    private int ano;
+    private int dia;
+    //private int mes;
+    //private int ano;
+    
+
+    public double difSegundos(Data data){
+        
+        int dia = this.dia - data.getDia();
+        int minutos =  this.minutos - data.getMinutos();
+        int hora = this.hora - data.getHora();
+        int segundos = this.segundos - data.getSegundos();
+
+        //deixando tudo em minutos
+        double res = (dia * 1440) + (minutos) + (hora * 60) + (segundos/60);
+        if (res < 0){
+            res = res * -1;
+        }
+        
+        return res;
+    }
+    
+    public void checarEvento(int hora, int dia, int mes, int ano){
+        System.out.println("Checa se o evento da hora: " + this.hora + ", dia: " + this.dia);
+
+                if (this.dia >= dia){
+
+                    if (this.hora >= hora){
+                        
+                        System.out.println("Evento nao passou");
+
+                        return;
+                        
+                    }
+                }
+
+        System.out.println("Evento passou");
+        
+        } 
     
     public boolean checarPM(){
-        if (this.hora > 12){
-
+        if (this.hora >= 12){
             return true;
-
         } else {
-
             return false;
         }
     }
 
     public void showData(){
         
-        System.out.print(this.dia +"/"+ this.mes + "/" + this.ano + " Hora " + this.hora ); //+ ":"+ this.minutos + ":"+ this.segundos);
+        System.out.print("Data atual: Dia: " + this.dia +" Horario " + this.hora + ":"+ this.minutos + ":"+ this.segundos);
         if (checarPM()){
             System.out.println(" PM");
         }else{
@@ -29,32 +61,32 @@ public class Data{
         
     }
     
-    // public int getMinutos() {
-    //     return this.minutos;
-    // }
+    public int getMinutos() {
+        return this.minutos;
+    }
 
-    // public void setMinutos(int minuto) {
-    //     if (minuto < 60){
+    public void setMinutos(int minuto) {
+        if (minuto < 60){
 
-    //         this.minutos = minuto;
-    //     } else {
-    //         this.minutos = 0;
-    //     }
+            this.minutos = minuto;
+        } else {
+            this.minutos = 0;
+        }
         
-    // }
+    }
 
-    // public int getSegundos() {
-    //     return this.segundos;
-    // }
+    public int getSegundos() {
+        return this.segundos;
+    }
 
-    // public void setSegundos(int segundos) {
-    //     if (segundos < 60){
+    public void setSegundos(int segundos) {
+        if (segundos < 60){
 
-    //         this.segundos = segundos;
-    //     } else {
-    //         this.segundos = 0;
-    //     }
-    // }
+            this.segundos = segundos;
+        } else {
+            this.segundos = 0;
+        }
+    }
 
     public int getDia() {
         return this.dia;
@@ -77,7 +109,7 @@ public class Data{
     public void setHora(int hora) {
         this.hora = hora;
     }
-
+ /*
     public int getMes() {
         return this.mes;
     }
@@ -94,5 +126,5 @@ public class Data{
         this.ano = ano;
     }
 
-
+*/
 }
