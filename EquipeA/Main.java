@@ -6,7 +6,7 @@ public class Main{
 
        data.setSegundos(30);
        data.setMinutos(30);
-       data.setHora(10);
+       data.setHora(14);
        data.setDia(12);
        data.setMes(10);
        data.setAno(2010);
