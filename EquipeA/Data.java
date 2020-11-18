@@ -1,19 +1,27 @@
 public class Data{
 
-    private int minuto;
+    private int minutos;
     private int segundos;
     private int dia;
     private int hora;
     private int mes;
     private int ano;
 
-
-    public int getMinuto() {
+    public void showData(){
+        System.out.println(this.dia +"/"+ this.mes + "/" + this.ano + " Hora " + this.hora + ":"+ this.minutos + ":"+ this.segundos);
+    }
+    public int getMinutos() {
         return this.minuto;
     }
 
-    public void setMinuto(int minuto) {
-        this.minuto = minuto;
+    public void setMinutos(int minuto) {
+        if (minuto < 60){
+
+            this.minuto = minuto;
+        } else {
+            this.minuto = 0;
+        }
+        
     }
 
     public int getSegundos() {
@@ -21,7 +29,12 @@ public class Data{
     }
 
     public void setSegundos(int segundos) {
-        this.segundos = segundos;
+        if (minuto < 60){
+
+            this.segundos = segundos;
+        } else {
+            this.segundos = 0;
+        }
     }
 
     public int getDia() {
@@ -30,6 +43,12 @@ public class Data{
 
     public void setDia(int dia) {
         this.dia = dia;
+        if (dia < 30){
+
+            this.dia = dia;
+        } else {
+            this.dia = 0;
+        }
     }
 
     public int getHora() {
