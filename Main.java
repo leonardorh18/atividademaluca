@@ -1,9 +1,12 @@
 class Main {
 	public static void main(String[] args) {
-	int armazena[] = new int[20];
+	
+	int tamanho = 100; 
+	int armazena[] = new int[tamanho];
 
-	System.out.println(maior(armazena));
-	System.out.println(menor(armazena));
+	System.out.println("Maior: " + maior(armazena));
+	System.out.println("Menor: " + menor(armazena));
+	System.out.println("Media: " + media(armazena));
 
 	}
 
@@ -27,5 +30,14 @@ class Main {
 			}
 		}
 		return menor;
+	}
+
+	public static int media(int[] lista) {
+		int media = 0;
+
+		for (int i = 0; i < lista.length; i++) {
+			media += lista[i];
+		}
+		return media/lista.length;
 	}
 }
