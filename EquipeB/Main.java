@@ -7,6 +7,7 @@ class Main {
 	System.out.println("Maior: " + maior(armazena));
 	System.out.println("Menor: " + menor(armazena));
 	System.out.println("Media: " + media(armazena));
+	System.out.println("QTD Primos: " + primos(armazena));
 
 	}
 
@@ -39,5 +40,27 @@ class Main {
 			media += lista[i];
 		}
 		return media/lista.length;
+	}
+
+	public static int primos(int[] lista) {
+		int qtdPrimes = 0;
+
+		for (int i = 0; i < lista.length; i++) {
+			if (lista[i] == 0){
+				break;
+			}
+			boolean flag = false;
+			for (int j = 2; j <= i / 2; j++) {
+				if (lista[i] % j == 0) {
+					flag = true;
+					break;
+				}
+			}
+
+			if (!flag) {
+				qtdPrimes++;
+			}
+		}
+		return qtdPrimes;
 	}
 }
