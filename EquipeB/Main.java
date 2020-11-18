@@ -3,41 +3,38 @@ class Main {
 	
 	int tamanho = 100; 
 	int armazena[] = new int[tamanho];
-
-	System.out.println("Maior: " + maior(armazena));
-	System.out.println("Menor: " + menor(armazena));
-	System.out.println("Media: " + media(armazena));
-
+	primos(armazena);
 	}
 
-	public static int maior(int[] lista) {
-		int maior = -9999999;
+	public static void primos(int[] lista) {
+		int qtdPrimes = 0;
+		int divisiveisPorDois = 0;
+		int tresEcinco = 0;
 
 		for (int i = 0; i < lista.length; i++) {
-			if(lista[i] > maior) {
-				maior = lista[i];
+			if (lista[i] == 0) {
+				break;
+			}
+			boolean flag = false;
+			for (int j = 2; j <= i / 2; j++) {
+				if (lista[i] % j == 0) {
+					if (j == 2) {
+						divisiveisPorDois++;
+					}
+					if (i % 3 == 0 && i % 5 == 0) {
+						tresEcinco++;
+					}
+					flag = true;
+					break;
+				}
+			}
+
+			if (!flag) {
+				qtdPrimes++;
 			}
 		}
-		return maior;
-	}
-
-	public static int menor(int[] lista) {
-		int menor = 9999999;
-
-		for (int i = 0; i < lista.length; i++) {
-			if(lista[i] < menor) {
-				menor = lista[i];
-			}
-		}
-		return menor;
-	}
-
-	public static int media(int[] lista) {
-		int media = 0;
-
-		for (int i = 0; i < lista.length; i++) {
-			media += lista[i];
-		}
-		return media/lista.length;
+		System.out.println("primos = " + qtdPrimes);
+		System.out.println("Divisiveis por 2: " + divisiveisPorDois);
+		System.out.println("Divisiveis por 3 e 5: " + tresEcinco);
 	}
 }
