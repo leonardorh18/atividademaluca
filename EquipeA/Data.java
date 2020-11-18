@@ -1,7 +1,7 @@
 public class Data{
 
-    private int minutos;
-    private int segundos;
+    //private int minutos;
+    //private int segundos;
     private int dia;
     private int hora;
     private int mes;
@@ -20,40 +20,41 @@ public class Data{
 
     public void showData(){
         
-        System.out.println(this.dia +"/"+ this.mes + "/" + this.ano + " Hora " + this.hora + ":"+ this.minutos + ":"+ this.segundos);
+        System.out.print(this.dia +"/"+ this.mes + "/" + this.ano + " Hora " + this.hora ); //+ ":"+ this.minutos + ":"+ this.segundos);
         if (checarPM()){
-            System.out.println("PM");
+            System.out.println(" PM");
         }else{
-            System.out.println("AM");
+            System.out.println(" AM");
         }
         
     }
-    public int getMinutos() {
-        return this.minutos;
-    }
+    
+    // public int getMinutos() {
+    //     return this.minutos;
+    // }
 
-    public void setMinutos(int minuto) {
-        if (minuto < 60){
+    // public void setMinutos(int minuto) {
+    //     if (minuto < 60){
 
-            this.minutos = minuto;
-        } else {
-            this.minutos = 0;
-        }
+    //         this.minutos = minuto;
+    //     } else {
+    //         this.minutos = 0;
+    //     }
         
-    }
+    // }
 
-    public int getSegundos() {
-        return this.segundos;
-    }
+    // public int getSegundos() {
+    //     return this.segundos;
+    // }
 
-    public void setSegundos(int segundos) {
-        if (segundos < 60){
+    // public void setSegundos(int segundos) {
+    //     if (segundos < 60){
 
-            this.segundos = segundos;
-        } else {
-            this.segundos = 0;
-        }
-    }
+    //         this.segundos = segundos;
+    //     } else {
+    //         this.segundos = 0;
+    //     }
+    // }
 
     public int getDia() {
         return this.dia;

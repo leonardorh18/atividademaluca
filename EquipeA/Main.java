@@ -4,8 +4,8 @@ public class Main{
 
        Data data = new Data();
 
-       data.setSegundos(30);
-       data.setMinutos(30);
+       //data.setSegundos(30);
+       //data.setMinutos(30);
        data.setHora(14);
        data.setDia(12);
        data.setMes(10);
